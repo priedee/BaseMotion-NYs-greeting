@@ -1,37 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <title>3D Model Viewer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- A-Frame -->
+    <meta charset="utf-8">
+    <title>A-Frame 360 Video</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-
-    <style>
-      body { margin: 0; overflow: hidden; }
-    </style>
   </head>
 
   <body>
     <a-scene>
 
-      <!-- Load your Blender-exported GLB -->
-      <a-entity
-        gltf-model="url(testix.glb)"
-        position="0 0 0"
-        scale="1 1 1">
-      </a-entity>
+      <a-assets>
+        <video
+          id="video360"
+          src="YOUR_VIDEO_NAME_HERE.mp4"
+          autoplay
+          loop
+          muted
+          playsinline>
+        </video>
+      </a-assets>
 
-      <!-- Camera -->
-      <a-entity 
-        camera 
-        position="0 1.6 3" 
-        look-controls>
-      </a-entity>
+      <a-videosphere src="#video360"></a-videosphere>
 
-      <!-- Basic light -->
-      <a-light type="ambient" color="#ffffff"></a-light>
+      <a-camera></a-camera>
 
     </a-scene>
   </body>
