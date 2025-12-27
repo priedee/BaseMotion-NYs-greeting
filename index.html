@@ -4,40 +4,7 @@
     <meta charset="utf-8">
     <title>A-Frame 360 Video</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script>
-AFRAME.registerComponent('snow', {
-  schema: {
-    count: { default: 300 }
-  },
-
-  init: function () {
-    for (let i = 0; i < this.data.count; i++) {
-      const snowflake = document.createElement('a-plane');
-
-      snowflake.setAttribute('width', Math.random() * 0.08 + 0.01);
-      snowflake.setAttribute('height', Math.random() * 0.08 + 0.01);
-      snowflake.setAttribute('material', 'color: white; opacity: 0.8; transparent: true');
-
-      snowflake.setAttribute('position', {
-        x: (Math.random() - 0.5) * 20,
-        y: Math.random() * 10,
-        z: (Math.random() - 0.5) * 20
-      });
-
-      snowflake.setAttribute('animation', {
-        property: 'position',
-        to: `${(Math.random() - 0.5) * 20} -2 ${(Math.random() - 0.5) * 20}`,
-        dur: Math.random() * 5000 + 5000,
-        loop: true,
-        easing: 'linear'
-      });
-
-      this.el.appendChild(snowflake);
-    }
-  }
-});
-</script>
-
+   
   </head>
 
   <body>
@@ -70,7 +37,7 @@ AFRAME.registerComponent('snow', {
 
 <a-light
   type="directional"
-  intensity="2.3"
+  intensity="0"
   position="-20 10 1">
 </a-light>
 
